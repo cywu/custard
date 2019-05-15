@@ -1,0 +1,8 @@
+.row {
+    display: grid;
+    grid-template-columns:2fr .5fr 3fr;
+}
+
+textarea {
+    width: 100%;
+}

@@ -1,0 +1,32 @@
+{
+    "manifest_version":2,
+    "name":"Custom Style",
+    "version":"0.2",
+
+    "description":"Prototype to fix CSS styling of some websites.",
+
+    "icons":{
+        "48":"icons/icon-48.png"
+    },
+
+    "applications": {
+        "gecko": {
+            "id": "{0943784d-9004-4d2d-b006-2032997bc24d}"
+        }
+    },
+
+    "browser_action":{
+        "browser_style": true,
+        "default_icon": "icons/icon-48.png",
+        "default_title": "Custard"
+    },
+
+    "background":{
+        "scripts":["background.js"]
+    },
+
+    "permissions":["<all_urls>","tabs","storage"]
+        
+}
+        
+        
