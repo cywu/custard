@@ -3,8 +3,14 @@ var RULES={};
 // instagram.com    @media all and (max-width: 1250px){div._lz6s { display:none !important;}}
 const store=restoreOptions();
 store.then((res)=>{
+    browser.contentScripts.register({js:[{file:"/content.js"}],matches:["<all_urls>"],runAt:'document_start'});
     browser.browserAction.onClicked.addListener(openOption);
-    browser.tabs.onUpdated.addListener((tabId,changeInfo,tab)=>{injectCSS(tab.url);});
+    
+    browser.runtime.onMessage.addListener((message,sender)=>{
+        /* console.log("received message");
+         * console.log(message); */
+        injectCSS(sender.tab);
+    });
 });
 
 
@@ -24,10 +30,10 @@ function openOption(){
 }
 
 
-function injectCSS(s){
-    const u=new URL(s);
+function injectCSS(tab){
+    const u=new URL(tab.url);
     //console.log(`rule: ${getRule(u.hostname)}`);
-    browser.tabs.insertCSS({code:getRule(u.hostname),cssOrigin:"user"});
+    browser.tabs.insertCSS(tab.id,{code:getRule(u.hostname),cssOrigin:"user"});
 }
 
 

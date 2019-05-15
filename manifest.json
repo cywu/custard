@@ -1,7 +1,7 @@
 {
     "manifest_version":2,
     "name":"Custom Style",
-    "version":"0.2",
+    "version":"0.3",
 
     "description":"Prototype to fix CSS styling of some websites.",
 

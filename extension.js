@@ -1,4 +1,4 @@
-var page=browser.extension.getBackgroundPage();
+const page=browser.extension.getBackgroundPage();
 document.addEventListener("DOMContentLoaded",(e)=>{
     const target=document.getElementById("target");
     target.appendChild(makeTableNode(page.RULES));
@@ -69,8 +69,13 @@ function saveOptions(e) {
     const vals=document.getElementsByName('style');
 
     let o={};
+
+    //should probably merge entries with same hostname.
     for (let i=0;i<keys.length;i++){
         //computed property name needs square bracket...
+        if (vals[i].value===''){
+            continue;
+        }
         o=Object.assign(o,{ [keys[i].value] : vals[i].value});
     }
     
