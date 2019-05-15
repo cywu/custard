@@ -4,8 +4,7 @@ var RULES={};
 const store=restoreOptions();
 store.then((res)=>{
     browser.contentScripts.register({js:[{file:"/content.js"}],matches:["<all_urls>"],runAt:'document_start'});
-    browser.browserAction.onClicked.addListener(openOption);
-    
+        
     browser.runtime.onMessage.addListener((message,sender)=>{
         /* console.log("received message");
          * console.log(message); */
