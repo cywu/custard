@@ -11,9 +11,12 @@ This type of add-ons has to ask for many permissions. Therefore if you plan to u
 - Access browser tabs. Needed to inject CSS into tabs.
 - Storage. (Firefox may not mention this one to you.) This add-on needs to store the CSS rules in order for them to persist from session to session.
 ## CSS rules I use on Instagram.com
+```
 div._lz6s { position:relative !important;}
 div.COOzN { display:none !important;}
 div.cGcGK { max-width:100% !important;}
 div._9AhH0 {display:none !important; 
 /*remove transparent layer over image. enable saving image from context menu.*/}
+
+```
 ### Your add-on doesn't append '!important' automatically?!!!
