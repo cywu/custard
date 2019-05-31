@@ -46,7 +46,7 @@ function makeRowNode(k,v){
     const bdelrow=document.createElement("button");
     bdelrow.setAttribute('name','delrow');
     bdelrow.setAttribute('type','button');
-    bdelrow.appendChild(document.createTextNode('Delete'));
+    bdelrow.appendChild(document.createTextNode('Delete Row'));
     site.appendChild(bdelrow);
     
     const style=document.createElement("div");
@@ -85,6 +85,7 @@ function saveOptions(e) {
 
     storageItem.then((res) => {
         page.restoreOptions();
+        //TODO: inject new CSS to update page looks.
     });
     
     e.preventDefault();
@@ -92,4 +93,4 @@ function saveOptions(e) {
     //TODO: enable UI after saving is done
 }
 
-//TODO: remove history entry for opening this option page
+//TODO: remove history entry for opening this option page, but I don't want to request anymore permissions.

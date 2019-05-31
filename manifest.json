@@ -1,12 +1,13 @@
 {
     "manifest_version":2,
-    "name":"Custom Style",
-    "version":"0.3",
+    "name":"Custom Style / Custard",
+    "version":"0.4",
 
     "description":"Prototype to fix CSS styling of some websites.",
 
     "icons":{
-        "48":"icons/icon-48.png"
+        "48":"icons/custard-plain-svg.svg",
+        "96":"icons/custard-plain-svg.svg"
     },
 
     "applications": {
@@ -23,12 +24,12 @@
     "options_ui":{
         "browser_style":true,
         "open_in_tab":true,
-        "page":"/extension.html"
+        "page":"extension.html"
     },
-        
+    
 
     "permissions":["<all_urls>","tabs","storage"]
-        
+    
 }
         
         

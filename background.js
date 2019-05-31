@@ -1,13 +1,10 @@
 var RULES={};
-// body{border: 5px solid yellow !important;}
-// instagram.com    @media all and (max-width: 1250px){div._lz6s { display:none !important;}}
+
 const store=restoreOptions();
 store.then((res)=>{
     browser.contentScripts.register({js:[{file:"/content.js"}],matches:["<all_urls>"],runAt:'document_start'});
         
     browser.runtime.onMessage.addListener((message,sender)=>{
-        /* console.log("received message");
-         * console.log(message); */
         injectCSS(sender.tab);
     });
 });
@@ -18,8 +15,6 @@ function restoreOptions(){
     return storageItem.then((res) => {
         if(res.custard){
             RULES=res.custard;
-            /* console.log("read rules");
-             * console.log(RULES); */
         }
     });
 }
@@ -31,7 +26,6 @@ function openOption(){
 
 function injectCSS(tab){
     const u=new URL(tab.url);
-    //console.log(`rule: ${getRule(u.hostname)}`);
     browser.tabs.insertCSS(tab.id,{code:getRule(u.hostname),cssOrigin:"user"});
 }
 
